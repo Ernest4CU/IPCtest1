@@ -42,43 +42,57 @@ namespace IPCtest1
             int cur_num = 0;
             
             while (true)
-            {                
-                for (int i = 0; i < 59; i++)
+            {
+                try
                 {
-                    unbuffer[i]=(byte)stream.ReadByte();
-                }                
-                
-                for (int i = 0; i < 5; i++)
-                {
-                    str_length += (char)stream.ReadByte();
-                }
-                num_cnt = Int32.Parse(str_length);
-                str_length = "";
-                for (int i = 0; i < 4; i++)
-                {
-                    unbuffer[i]=(byte)stream.ReadByte();
-                }
-                for (int i = 0; i < num_cnt; i++)
-                {
-                    buffer[i] = (byte)stream.ReadByte();
-                }
-                unbuffer[1]=(byte)stream.ReadByte();
-                unbuffer[1] = (byte)stream.ReadByte();
-                Bitmap bmp = (Bitmap)Bitmap.FromStream(
-                              new MemoryStream(buffer, 0, num_cnt));
+                    for (int i = 0; i < 59; i++)
+                    {
+                        unbuffer[i] = (byte)stream.ReadByte();
+                    }
 
-                //照片保存
-                //bmp.Save(Application.StartupPath + "//1/pic"+(cur_num++)+".jpeg");
-                image_s= Image.FromHbitmap(bmp.GetHbitmap());
-                
-                pictureBox1.Image = image_s;
-                pictureBox1.Image = Image.FromHbitmap(bmp.GetHbitmap());
-                //bmp = null;//释放无效
-                bmp.Dispose();
-                //ig.Dispose();
-                //GC.Collect();               
+                    for (int i = 0; i < 5; i++)
+                    {
+                        str_length += (char)stream.ReadByte();
+                    }
+                    num_cnt = Int32.Parse(str_length);
+                    str_length = "";
+                    for (int i = 0; i < 4; i++)
+                    {
+                        unbuffer[i] = (byte)stream.ReadByte();
+                    }
+                    for (int i = 0; i < num_cnt; i++)
+                    {
+                        buffer[i] = (byte)stream.ReadByte();
+                    }
+                    unbuffer[1] = (byte)stream.ReadByte();
+                    unbuffer[1] = (byte)stream.ReadByte();
+                    //Bitmap bmp = (Bitmap)Bitmap.FromStream(
+                    //              new MemoryStream(buffer, 0, num_cnt));
+
+
+                    MemoryStream ms = new MemoryStream(buffer);
+                    image_s = Image.FromStream(ms);
+                    //照片保存
+                    //bmp.Save(Application.StartupPath + "//1/pic"+(cur_num++)+".jpeg");
+                    //IntPtr hBitmap = bmp.GetHbitmap();
+                    //image_s = Image.FromHbitmap(hBitmap);
+                    ////DeleteObject(hBitmap);
+                    
+                    pictureBox1.Image = image_s;
+                    //pictureBox1.Image = Image.FromHbitmap(bmp.GetHbitmap());
+                    //bmp = null;//释放无效
+                    //bmp.Dispose();
+                    //image_s.Dispose();
+                    GC.Collect();
+                    //ig.Dispose();
+                    //GC.Collect();    
+                }
+                catch { }
             }
         }
+
+        [System.Runtime.InteropServices.DllImport("gdi32.dll")]
+        public static extern bool DeleteObject(IntPtr hObject);
         private Bitmap get_IPCbitmap()
         {
             Bitmap bm = null;
