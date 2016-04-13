@@ -66,24 +66,29 @@ namespace IPCtest1
                     }
                     unbuffer[1] = (byte)stream.ReadByte();
                     unbuffer[1] = (byte)stream.ReadByte();
-                    //Bitmap bmp = (Bitmap)Bitmap.FromStream(
-                    //              new MemoryStream(buffer, 0, num_cnt));
+                    Bitmap bmp = (Bitmap)Bitmap.FromStream(
+                                  new MemoryStream(buffer, 0, num_cnt));
 
+                    //方法1
+                    IntPtr hBitmap = bmp.GetHbitmap();
+                    image_s = Image.FromHbitmap(hBitmap);
 
-                    MemoryStream ms = new MemoryStream(buffer);
-                    image_s = Image.FromStream(ms);
+                    //方法2
+                    //MemoryStream ms = new MemoryStream(buffer);
+                    //image_s = Image.FromStream(ms);
                     //照片保存
                     //bmp.Save(Application.StartupPath + "//1/pic"+(cur_num++)+".jpeg");
                     //IntPtr hBitmap = bmp.GetHbitmap();
-                    //image_s = Image.FromHbitmap(hBitmap);
-                    ////DeleteObject(hBitmap);
-                    
+
+
+
                     pictureBox1.Image = image_s;
                     //pictureBox1.Image = Image.FromHbitmap(bmp.GetHbitmap());
                     //bmp = null;//释放无效
                     //bmp.Dispose();
                     //image_s.Dispose();
                     GC.Collect();
+                    DeleteObject(hBitmap);
                     //ig.Dispose();
                     //GC.Collect();    
                 }
