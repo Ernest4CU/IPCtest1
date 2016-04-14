@@ -18,10 +18,10 @@ namespace IPCtest1
         {
             InitializeComponent();
         }
-
+        Thread th = null;
         private void button1_Click(object sender, EventArgs e)
         {
-            Thread th = new Thread(ipc_run);
+            th = new Thread(ipc_run);
             th.Start();
         }
 
@@ -167,6 +167,12 @@ namespace IPCtest1
             pb_snapshot.Image = image_snapshot;
             GC.Collect();
             //image_snapshot.Dispose();            
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if(th!=null)
+                th.Abort();
         }
     }
 }
