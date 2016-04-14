@@ -168,5 +168,10 @@ namespace IPCtest1
             GC.Collect();
             //image_snapshot.Dispose();            
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
