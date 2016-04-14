@@ -18,11 +18,12 @@ namespace IPCtest1
         {
             InitializeComponent();
         }
-        Thread th = null;
+
+        Thread get_video_thread = null;
         private void button1_Click(object sender, EventArgs e)
         {
-            th = new Thread(ipc_run);
-            th.Start();
+            get_video_thread = new Thread(ipc_run);
+            get_video_thread.Start();
         }
 
         private void ipc_run()
@@ -169,10 +170,24 @@ namespace IPCtest1
             //image_snapshot.Dispose();            
         }
 
-        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+
+        private void Form1_Load(object sender, EventArgs e)
         {
-            if(th!=null)
-                th.Abort();
+
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (get_video_thread != null)
+            {
+                get_video_thread.Abort();
+            }
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {   
+            if(get_video_thread!=null)
+                get_video_thread.Abort();
         }
     }
 }
