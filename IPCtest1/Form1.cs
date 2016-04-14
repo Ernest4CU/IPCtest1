@@ -76,9 +76,7 @@ namespace IPCtest1
                         //照片保存
                         //bmp.Save(Application.StartupPath + "//1/pic"+(cur_num++)+".jpeg");
                         //IntPtr hBitmap = bmp.GetHbitmap();
-
-
-
+                        
                         pb_video.Image = image_s;
                         //pictureBox1.Image = Image.FromHbitmap(bmp.GetHbitmap());
                         //bmp = null;//释放无效
@@ -97,9 +95,7 @@ namespace IPCtest1
                 MessageBox.Show("无法连接到远程服务器!!!");
             }
         }
-
-
-
+        
         [System.Runtime.InteropServices.DllImport("gdi32.dll")]
         public static extern bool DeleteObject(IntPtr hObject);
         private Bitmap get_IPCbitmap()
