@@ -27,20 +27,16 @@ namespace IPCtest1
 
         private void ipc_run()
         {
-            string sourceURL = "http://192.168.1.100/videostream.cgi?loginuse=admin&amp;loginpas=";
+            string sourceURL = "http://192.168.1.104/videostream.cgi?loginuse=admin&amp;loginpas=";
             byte[] buffer = new byte[100000];
             byte[] unbuffer = new byte[60];       
             string str_length = "";
             int num_cnt = 0;
-            Image image_s = null;
-            // create HTTP request  
-            HttpWebRequest req = (HttpWebRequest)WebRequest.Create(sourceURL);
-            // get response  
-            WebResponse resp = req.GetResponse();
-            // get response stream  
-            Stream stream = resp.GetResponseStream();
+            Image image_s = null;          
             int cur_num = 0;
-            
+            IPC_Cgi ipcamear = new IPC_Cgi();
+
+            Stream stream = ipcamear.get_videoStream(sourceURL);
             while (true)
             {
                 try
@@ -82,7 +78,7 @@ namespace IPCtest1
 
 
 
-                    pictureBox1.Image = image_s;
+                    pb_video.Image = image_s;
                     //pictureBox1.Image = Image.FromHbitmap(bmp.GetHbitmap());
                     //bmp = null;//释放无效
                     //bmp.Dispose();
@@ -90,11 +86,13 @@ namespace IPCtest1
                     GC.Collect();
                     DeleteObject(hBitmap);
                     //ig.Dispose();
-                    //GC.Collect();    
+                    //GC.Collect();
                 }
                 catch { }
             }
         }
+
+
 
         [System.Runtime.InteropServices.DllImport("gdi32.dll")]
         public static extern bool DeleteObject(IntPtr hObject);
@@ -102,6 +100,73 @@ namespace IPCtest1
         {
             Bitmap bm = null;
             return bm;
+        }
+
+        private void pl_OrientationUp_MouseDown(object sender, MouseEventArgs e)
+        {
+            string str_ctl = @"http://192.168.1.104/decoder_control.cgi?command=0&onestep=0&user=admin&pwd=";
+            IPC_Cgi IpCamera_temp = new IPC_Cgi();
+            IpCamera_temp.Ptz_control(str_ctl);
+        }
+        private void pl_OrientationUp_MouseUp(object sender, MouseEventArgs e)
+        {
+            string str_ctl = @"http://192.168.1.104/decoder_control.cgi?command=1&onestep=0&user=admin&pwd=";
+            IPC_Cgi IpCamera_temp = new IPC_Cgi();
+            IpCamera_temp.Ptz_control(str_ctl);
+        }
+
+        
+
+        private void pl_OrientationDown_MouseDown(object sender, MouseEventArgs e)
+        {
+            string str_ctl = @"http://192.168.1.104/decoder_control.cgi?command=2&onestep=0&user=admin&pwd=";
+            IPC_Cgi IpCamera_temp = new IPC_Cgi();
+            IpCamera_temp.Ptz_control(str_ctl);
+        }
+
+        private void pl_OrientationDown_MouseUp(object sender, MouseEventArgs e)
+        {
+            string str_ctl = @"http://192.168.1.104/decoder_control.cgi?command=3&onestep=0&user=admin&pwd=";
+            IPC_Cgi IpCamera_temp = new IPC_Cgi();
+            IpCamera_temp.Ptz_control(str_ctl);
+        }
+
+        private void pl_OrientationLeft_MouseDown(object sender, MouseEventArgs e)
+        {
+            string str_ctl = @"http://192.168.1.104/decoder_control.cgi?command=4&onestep=0&user=admin&pwd=";
+            IPC_Cgi IpCamera_temp = new IPC_Cgi();
+            IpCamera_temp.Ptz_control(str_ctl);
+        }
+
+        private void pl_OrientationLeft_MouseUp(object sender, MouseEventArgs e)
+        {
+            string str_ctl = @"http://192.168.1.104/decoder_control.cgi?command=5&onestep=0&user=admin&pwd=";
+            IPC_Cgi IpCamera_temp = new IPC_Cgi();
+            IpCamera_temp.Ptz_control(str_ctl);
+        }
+
+        private void pl_OrientationRight_MouseDown(object sender, MouseEventArgs e)
+        {
+            string str_ctl = @"http://192.168.1.104/decoder_control.cgi?command=6&onestep=0&user=admin&pwd=";
+            IPC_Cgi IpCamera_temp = new IPC_Cgi();
+            IpCamera_temp.Ptz_control(str_ctl);
+        }
+
+        private void pl_OrientationRight_MouseUp(object sender, MouseEventArgs e)
+        {
+            string str_ctl = @"http://192.168.1.104/decoder_control.cgi?command=7&onestep=0&user=admin&pwd=";
+            IPC_Cgi IpCamera_temp = new IPC_Cgi();
+            IpCamera_temp.Ptz_control(str_ctl);
+        }
+        Image image_snapshot = null;
+        private void bt_test_Click(object sender, EventArgs e)
+        {
+            string str_ctl = @"http://192.168.1.104/snapshot.cgi?user=admin&pwd=";
+            IPC_Cgi IPCamera = new IPC_Cgi();
+            image_snapshot = IPCamera.get_Image(str_ctl);
+            pb_snapshot.Image = image_snapshot;
+            GC.Collect();
+            //image_snapshot.Dispose();            
         }
     }
 }
