@@ -153,9 +153,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(446, 492);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 12);
+            this.label2.Size = new System.Drawing.Size(65, 12);
             this.label2.TabIndex = 10;
-            this.label2.Text = "label2";
+            this.label2.Text = "图片显示区";
             // 
             // Form1
             // 
