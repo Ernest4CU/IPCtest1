@@ -39,6 +39,8 @@
             this.pb_snapshot = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.avi_record = new System.Windows.Forms.Button();
+            this.avi_save = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pb_video)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_snapshot)).BeginInit();
@@ -59,6 +61,7 @@
             this.pb_video.Location = new System.Drawing.Point(532, 29);
             this.pb_video.Name = "pb_video";
             this.pb_video.Size = new System.Drawing.Size(454, 295);
+            this.pb_video.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pb_video.TabIndex = 2;
             this.pb_video.TabStop = false;
             // 
@@ -136,6 +139,7 @@
             this.pb_snapshot.Location = new System.Drawing.Point(532, 343);
             this.pb_snapshot.Name = "pb_snapshot";
             this.pb_snapshot.Size = new System.Drawing.Size(454, 295);
+            this.pb_snapshot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pb_snapshot.TabIndex = 8;
             this.pb_snapshot.TabStop = false;
             // 
@@ -157,11 +161,33 @@
             this.label2.TabIndex = 10;
             this.label2.Text = "图片显示区";
             // 
+            // avi_record
+            // 
+            this.avi_record.Location = new System.Drawing.Point(64, 533);
+            this.avi_record.Name = "avi_record";
+            this.avi_record.Size = new System.Drawing.Size(75, 23);
+            this.avi_record.TabIndex = 11;
+            this.avi_record.Text = "视频录制";
+            this.avi_record.UseVisualStyleBackColor = true;
+            this.avi_record.Click += new System.EventHandler(this.avi_record_Click);
+            // 
+            // avi_save
+            // 
+            this.avi_save.Location = new System.Drawing.Point(228, 533);
+            this.avi_save.Name = "avi_save";
+            this.avi_save.Size = new System.Drawing.Size(75, 23);
+            this.avi_save.TabIndex = 12;
+            this.avi_save.Text = "录制完成";
+            this.avi_save.UseVisualStyleBackColor = true;
+            this.avi_save.Click += new System.EventHandler(this.avi_save_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1192, 662);
+            this.Controls.Add(this.avi_save);
+            this.Controls.Add(this.avi_record);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pb_snapshot);
@@ -171,7 +197,6 @@
             this.Controls.Add(this.button1);
             this.Name = "Form1";
             this.Text = "Form1";
-
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -197,6 +222,8 @@
         private System.Windows.Forms.PictureBox pb_snapshot;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button avi_record;
+        private System.Windows.Forms.Button avi_save;
     }
 }
 

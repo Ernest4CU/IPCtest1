@@ -1,0 +1,14 @@
+E:\MyProjects\网络摄像头\winform\IPCtest1\IPCtest1\bin\Release\IPCtest1.exe.config
+E:\MyProjects\网络摄像头\winform\IPCtest1\IPCtest1\bin\Release\IPCtest1.exe
+E:\MyProjects\网络摄像头\winform\IPCtest1\IPCtest1\bin\Release\IPCtest1.pdb
+E:\MyProjects\网络摄像头\winform\IPCtest1\IPCtest1\bin\Release\AForge.Video.VFW.dll
+E:\MyProjects\网络摄像头\winform\IPCtest1\IPCtest1\obj\Release\IPCtest1.Form1.resources
+E:\MyProjects\网络摄像头\winform\IPCtest1\IPCtest1\obj\Release\IPCtest1.Properties.Resources.resources
+E:\MyProjects\网络摄像头\winform\IPCtest1\IPCtest1\obj\Release\IPCtest1.csproj.GenerateResource.Cache
+E:\MyProjects\网络摄像头\winform\IPCtest1\IPCtest1\obj\Release\IPCtest1.exe
+E:\MyProjects\网络摄像头\winform\IPCtest1\IPCtest1\obj\Release\IPCtest1.pdb
+E:\MyProjects\网络摄像头\winform\IPCtest1\IPCtest1\bin\Release\AForge.Video.dll
+E:\MyProjects\网络摄像头\winform\IPCtest1\IPCtest1\bin\Release\AForge.dll
+E:\MyProjects\网络摄像头\winform\IPCtest1\IPCtest1\bin\Release\AForge.Video.xml
+E:\MyProjects\网络摄像头\winform\IPCtest1\IPCtest1\bin\Release\AForge.xml
+E:\MyProjects\网络摄像头\winform\IPCtest1\IPCtest1\obj\Release\IPCtest1.csprojResolveAssemblyReference.cache

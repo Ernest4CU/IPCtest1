@@ -66,8 +66,7 @@ namespace IPCtest1
         public void Ptz_control(string url)
         {
             HttpWebRequest req = (HttpWebRequest)WebRequest.Create(url);
-            WebResponse resp = req.GetResponse();
-            
+            WebResponse resp = req.GetResponse();            
             resp.Dispose();
         }
 

@@ -16,3 +16,12 @@ E:\MyProjects\网络摄像头\IPCtest1\IPCtest1\obj\Debug\IPCtest1.csprojResolve
 E:\MyProjects\网络摄像头\IPCtest1\IPCtest1\obj\Debug\IPCtest1.Form1.resources
 E:\MyProjects\网络摄像头\IPCtest1\IPCtest1\obj\Debug\IPCtest1.Properties.Resources.resources
 E:\MyProjects\网络摄像头\IPCtest1\IPCtest1\obj\Debug\IPCtest1.csproj.GenerateResource.Cache
+E:\MyProjects\网络摄像头\winform\IPCtest1\IPCtest1\bin\Debug\IPCtest1.exe.config
+E:\MyProjects\网络摄像头\winform\IPCtest1\IPCtest1\obj\Debug\IPCtest1.exe
+E:\MyProjects\网络摄像头\winform\IPCtest1\IPCtest1\obj\Debug\IPCtest1.pdb
+E:\MyProjects\网络摄像头\winform\IPCtest1\IPCtest1\bin\Debug\IPCtest1.exe
+E:\MyProjects\网络摄像头\winform\IPCtest1\IPCtest1\bin\Debug\IPCtest1.pdb
+E:\MyProjects\网络摄像头\winform\IPCtest1\IPCtest1\obj\Debug\IPCtest1.csprojResolveAssemblyReference.cache
+E:\MyProjects\网络摄像头\winform\IPCtest1\IPCtest1\obj\Debug\IPCtest1.Form1.resources
+E:\MyProjects\网络摄像头\winform\IPCtest1\IPCtest1\obj\Debug\IPCtest1.Properties.Resources.resources
+E:\MyProjects\网络摄像头\winform\IPCtest1\IPCtest1\obj\Debug\IPCtest1.csproj.GenerateResource.Cache
