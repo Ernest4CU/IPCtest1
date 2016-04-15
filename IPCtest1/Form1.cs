@@ -23,8 +23,9 @@ namespace IPCtest1
 
         Thread get_video_thread = null;
         string str_ip = "192.168.1.100";
-        AVIWriter aviWriter = new AVIWriter();
+        AVIWriter aviWriter = new AVIWriter();        
         int avirecord = 0;
+        int pic_count = 0;
 
 
         private void button1_Click(object sender, EventArgs e)
@@ -76,11 +77,11 @@ namespace IPCtest1
                                       new MemoryStream(buffer, 0, num_cnt));
 
                         /*在视频上添加实时时间*/
-                        Graphics g = Graphics.FromImage(bmp);
-                        String str = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                        Graphics g = Graphics.FromImage(bmp);                        
                         Font font = new Font("宋体", 18);
+                        String str_realtime = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
                         SolidBrush sbrush = new SolidBrush(Color.WhiteSmoke);
-                        g.DrawString(str, font, sbrush, new PointF(10, 20));
+                        g.DrawString(str_realtime, font, sbrush, new PointF(10, 20));
                         MemoryStream ms = new MemoryStream();
                         bmp.Save(ms, System.Drawing.Imaging.ImageFormat.Bmp);
 
@@ -111,8 +112,6 @@ namespace IPCtest1
                         //image_s.Dispose();
                         GC.Collect();
                         DeleteObject(hBitmap);
-                        //ig.Dispose();
-                        //GC.Collect();
                     }
                     catch { }
                 }
@@ -142,9 +141,7 @@ namespace IPCtest1
             string str_ctl = @"http://" + str_ip + "/decoder_control.cgi?command=1&onestep=0&user=admin&pwd=";
             IPC_Cgi IpCamera_temp = new IPC_Cgi();
             IpCamera_temp.Ptz_control(str_ctl);
-        }
-
-        
+        }        
 
         private void pl_OrientationDown_MouseDown(object sender, MouseEventArgs e)
         {
@@ -187,15 +184,17 @@ namespace IPCtest1
             IPC_Cgi IpCamera_temp = new IPC_Cgi();
             IpCamera_temp.Ptz_control(str_ctl);
         }
+
         Image image_snapshot = null;
+
         private void bt_test_Click(object sender, EventArgs e)
         {
             string str_ctl = @"http://" + str_ip + "/snapshot.cgi?user=admin&pwd=";
             IPC_Cgi IPCamera = new IPC_Cgi();
             image_snapshot = IPCamera.get_Image(str_ctl);
-            pb_snapshot.Image = image_snapshot;
+            image_snapshot.Save("F:\\IPC_Picture\\" + pic_count + ".jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
             GC.Collect();
-            //image_snapshot.Dispose();            
+            System.Diagnostics.Process.Start("F:\\IPC_Picture");         
         }
 
 
@@ -222,7 +221,7 @@ namespace IPCtest1
 
         private void avi_record_Click(object sender, EventArgs e)
         {
-            aviWriter.Open("F:\\test.avi", 640, 480);
+            aviWriter.Open("F:\\IPC_Video\\001.avi", 640, 480);
             avirecord = 1;
         }
 
@@ -230,6 +229,7 @@ namespace IPCtest1
         {
             aviWriter.Close();
             avirecord = 0;
+            System.Diagnostics.Process.Start("F:\\IPC_Video");
         }
     }
 }

@@ -25,3 +25,8 @@ E:\MyProjects\网络摄像头\winform\IPCtest1\IPCtest1\obj\Debug\IPCtest1.cspro
 E:\MyProjects\网络摄像头\winform\IPCtest1\IPCtest1\obj\Debug\IPCtest1.Form1.resources
 E:\MyProjects\网络摄像头\winform\IPCtest1\IPCtest1\obj\Debug\IPCtest1.Properties.Resources.resources
 E:\MyProjects\网络摄像头\winform\IPCtest1\IPCtest1\obj\Debug\IPCtest1.csproj.GenerateResource.Cache
+E:\MyProjects\网络摄像头\winform\IPCtest1\IPCtest1\bin\Debug\AForge.Video.dll
+E:\MyProjects\网络摄像头\winform\IPCtest1\IPCtest1\bin\Debug\AForge.dll
+E:\MyProjects\网络摄像头\winform\IPCtest1\IPCtest1\bin\Debug\AForge.Video.VFW.xml
+E:\MyProjects\网络摄像头\winform\IPCtest1\IPCtest1\bin\Debug\AForge.Video.xml
+E:\MyProjects\网络摄像头\winform\IPCtest1\IPCtest1\bin\Debug\AForge.xml

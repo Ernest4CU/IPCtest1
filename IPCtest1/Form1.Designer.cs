@@ -36,21 +36,17 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pl_OrientationRight = new System.Windows.Forms.Label();
             this.bt_test = new System.Windows.Forms.Button();
-            this.pb_snapshot = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.avi_record = new System.Windows.Forms.Button();
             this.avi_save = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pb_video)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_snapshot)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(64, 469);
+            this.button1.Location = new System.Drawing.Point(49, 364);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(90, 45);
             this.button1.TabIndex = 0;
             this.button1.Text = "视频显示";
             this.button1.UseVisualStyleBackColor = true;
@@ -58,9 +54,10 @@
             // 
             // pb_video
             // 
-            this.pb_video.Location = new System.Drawing.Point(532, 29);
+            this.pb_video.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.pb_video.Location = new System.Drawing.Point(368, 32);
             this.pb_video.Name = "pb_video";
-            this.pb_video.Size = new System.Drawing.Size(454, 295);
+            this.pb_video.Size = new System.Drawing.Size(640, 480);
             this.pb_video.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pb_video.TabIndex = 2;
             this.pb_video.TabStop = false;
@@ -69,7 +66,7 @@
             // 
             this.pl_OrientationUp.AutoSize = true;
             this.pl_OrientationUp.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.pl_OrientationUp.Location = new System.Drawing.Point(83, 37);
+            this.pl_OrientationUp.Location = new System.Drawing.Point(63, 14);
             this.pl_OrientationUp.Name = "pl_OrientationUp";
             this.pl_OrientationUp.Size = new System.Drawing.Size(33, 28);
             this.pl_OrientationUp.TabIndex = 3;
@@ -81,7 +78,7 @@
             // 
             this.pl_OrientationDown.AutoSize = true;
             this.pl_OrientationDown.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.pl_OrientationDown.Location = new System.Drawing.Point(83, 130);
+            this.pl_OrientationDown.Location = new System.Drawing.Point(63, 117);
             this.pl_OrientationDown.Name = "pl_OrientationDown";
             this.pl_OrientationDown.Size = new System.Drawing.Size(33, 28);
             this.pl_OrientationDown.TabIndex = 4;
@@ -93,7 +90,7 @@
             // 
             this.pl_OrientationLeft.AutoSize = true;
             this.pl_OrientationLeft.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.pl_OrientationLeft.Location = new System.Drawing.Point(30, 83);
+            this.pl_OrientationLeft.Location = new System.Drawing.Point(16, 66);
             this.pl_OrientationLeft.Name = "pl_OrientationLeft";
             this.pl_OrientationLeft.Size = new System.Drawing.Size(33, 28);
             this.pl_OrientationLeft.TabIndex = 5;
@@ -107,16 +104,16 @@
             this.panel1.Controls.Add(this.pl_OrientationDown);
             this.panel1.Controls.Add(this.pl_OrientationLeft);
             this.panel1.Controls.Add(this.pl_OrientationUp);
-            this.panel1.Location = new System.Drawing.Point(103, 103);
+            this.panel1.Location = new System.Drawing.Point(89, 77);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 200);
+            this.panel1.Size = new System.Drawing.Size(157, 158);
             this.panel1.TabIndex = 6;
             // 
             // pl_OrientationRight
             // 
             this.pl_OrientationRight.AutoSize = true;
             this.pl_OrientationRight.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.pl_OrientationRight.Location = new System.Drawing.Point(137, 83);
+            this.pl_OrientationRight.Location = new System.Drawing.Point(107, 66);
             this.pl_OrientationRight.Name = "pl_OrientationRight";
             this.pl_OrientationRight.Size = new System.Drawing.Size(33, 28);
             this.pl_OrientationRight.TabIndex = 7;
@@ -126,46 +123,19 @@
             // 
             // bt_test
             // 
-            this.bt_test.Location = new System.Drawing.Point(228, 469);
+            this.bt_test.Location = new System.Drawing.Point(201, 364);
             this.bt_test.Name = "bt_test";
-            this.bt_test.Size = new System.Drawing.Size(75, 23);
+            this.bt_test.Size = new System.Drawing.Size(90, 45);
             this.bt_test.TabIndex = 7;
             this.bt_test.Text = "截图";
             this.bt_test.UseVisualStyleBackColor = true;
             this.bt_test.Click += new System.EventHandler(this.bt_test_Click);
             // 
-            // pb_snapshot
-            // 
-            this.pb_snapshot.Location = new System.Drawing.Point(532, 343);
-            this.pb_snapshot.Name = "pb_snapshot";
-            this.pb_snapshot.Size = new System.Drawing.Size(454, 295);
-            this.pb_snapshot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pb_snapshot.TabIndex = 8;
-            this.pb_snapshot.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(447, 156);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 12);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "视频显示区";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(446, 492);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 12);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "图片显示区";
-            // 
             // avi_record
             // 
-            this.avi_record.Location = new System.Drawing.Point(64, 533);
+            this.avi_record.Location = new System.Drawing.Point(49, 450);
             this.avi_record.Name = "avi_record";
-            this.avi_record.Size = new System.Drawing.Size(75, 23);
+            this.avi_record.Size = new System.Drawing.Size(90, 45);
             this.avi_record.TabIndex = 11;
             this.avi_record.Text = "视频录制";
             this.avi_record.UseVisualStyleBackColor = true;
@@ -173,9 +143,9 @@
             // 
             // avi_save
             // 
-            this.avi_save.Location = new System.Drawing.Point(228, 533);
+            this.avi_save.Location = new System.Drawing.Point(201, 450);
             this.avi_save.Name = "avi_save";
-            this.avi_save.Size = new System.Drawing.Size(75, 23);
+            this.avi_save.Size = new System.Drawing.Size(90, 45);
             this.avi_save.TabIndex = 12;
             this.avi_save.Text = "录制完成";
             this.avi_save.UseVisualStyleBackColor = true;
@@ -185,12 +155,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1192, 662);
+            this.ClientSize = new System.Drawing.Size(1070, 550);
             this.Controls.Add(this.avi_save);
             this.Controls.Add(this.avi_record);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.pb_snapshot);
             this.Controls.Add(this.bt_test);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pb_video);
@@ -203,9 +170,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pb_video)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_snapshot)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -219,9 +184,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label pl_OrientationRight;
         private System.Windows.Forms.Button bt_test;
-        private System.Windows.Forms.PictureBox pb_snapshot;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button avi_record;
         private System.Windows.Forms.Button avi_save;
     }
